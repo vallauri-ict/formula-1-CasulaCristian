@@ -71,3 +71,12 @@ C:\Users\faran\Desktop\Informatica\github\formula-1-francescopepez\FormulaOneDll
 C:\Users\faran\Desktop\Informatica\github\formula-1-francescopepez\FormulaOneDll\obj\Debug\FormulaOneDll.csproj.CopyComplete
 C:\Users\faran\Desktop\Informatica\github\formula-1-francescopepez\FormulaOneDll\obj\Debug\FormulaOneDll.dll
 C:\Users\faran\Desktop\Informatica\github\formula-1-francescopepez\FormulaOneDll\obj\Debug\FormulaOneDll.pdb
+C:\Users\Preload\Desktop\GitHub\formula-1-CasulaCristian\formula1\FormulaOneDll\bin\Debug\FormulaOneDll.dll
+C:\Users\Preload\Desktop\GitHub\formula-1-CasulaCristian\formula1\FormulaOneDll\bin\Debug\FormulaOneDll.pdb
+C:\Users\Preload\Desktop\GitHub\formula-1-CasulaCristian\formula1\FormulaOneDll\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Preload\Desktop\GitHub\formula-1-CasulaCristian\formula1\FormulaOneDll\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Preload\Desktop\GitHub\formula-1-CasulaCristian\formula1\FormulaOneDll\obj\Debug\FormulaOneDll.csprojAssemblyReference.cache
+C:\Users\Preload\Desktop\GitHub\formula-1-CasulaCristian\formula1\FormulaOneDll\obj\Debug\FormulaOneDll.csproj.CoreCompileInputs.cache
+C:\Users\Preload\Desktop\GitHub\formula-1-CasulaCristian\formula1\FormulaOneDll\obj\Debug\FormulaOneDll.csproj.CopyComplete
+C:\Users\Preload\Desktop\GitHub\formula-1-CasulaCristian\formula1\FormulaOneDll\obj\Debug\FormulaOneDll.dll
+C:\Users\Preload\Desktop\GitHub\formula-1-CasulaCristian\formula1\FormulaOneDll\obj\Debug\FormulaOneDll.pdb

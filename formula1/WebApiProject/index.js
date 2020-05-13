@@ -32,7 +32,7 @@ $(() => {
 
 function creaTabellaDrivers(drivers)
 {
-    let _table = $("<table>");
+    let _table = $("<table>").addClass("table");
     _table.append($("<tr><td>ID</td><td>First Name</td><td>Last Name</td><td>Nationality</td><td>Photo</td></tr>"));
     for (let i = 0; i < drivers.length; i++)
     {
@@ -53,7 +53,7 @@ function creaTabellaDrivers(drivers)
                 row.append(_img);
             }
         }
-        let btnInfo = $(`<input type='button' onclick='visualizzaDriver(${drivers[i]["id"]})' value='Info'>`);
+        let btnInfo = $(`<input type='button' onclick='visualizzaDriver(${drivers[i]["id"]})' class='btn btn-danger' value='Info'>`);
         row.append(btnInfo);
         _table.append(row);
 
@@ -74,24 +74,44 @@ function visualizzaDriver(_driverId)
         let luogoNascita = data["placeOfBirthday"];
         let desc = data["description"];
         let nazionalita = data["country"]["countryName"];
-        _info.append($(`<h1>${nome} ${cognome}</h1>`));
-        let _p = $(`<p>Date of Birth: ${dob.split('T')[0]}</p>`);
-        _info.append(_p);
-        _p = $(`<p>Place of Birth: ${luogoNascita}</p>`);
-        _info.append(_p);
-        _p = $(`<p>Nationality: ${nazionalita}</p>`);
-        _info.append(_p);
-        let _img = $("<img>");
+
+        let _div1 = $("<div class='row'></div>");
+        _div1.append($("<div class='col-sm-4'><div/>"));
+        let _h1 = $(`<h1 class='col-sm-4'>${nome} ${cognome}</h1>`);
+        _div1.append(_h1);
+        _info.append(_div1);
+
+        let _div = $("<div class='row'></div>");
+        _div.append($("<div class='col-sm-7'><div/>"));
+        let _p = $(`<p class='col-sm-4'>Date of Birth: ${dob.split('T')[0]}</p>`);
+        _div.append(_p);
+        _info.append(_div);
+        _div = $("<div class='row'></div>");
+        _div.append($("<div class='col-sm-7'><div/>"));
+        _p = $(`<p class='col-sm-4'>Place of Birth: ${luogoNascita}</p>`);
+        _div.append(_p);
+        _info.append(_div);
+        _div = $("<div class='row'></div>");
+        _div.append($("<div class='col-sm-7'><div/>"));
+        _p = $(`<p class='col-sm-4'>Nationality: ${nazionalita}</p>`);
+        _div.append(_p);
+        _info.append(_div);
+
+        _div = $("<div class='row'></div>");
+        _div.append($("<div class='col-sm-2'><div/>"));
+        _p = $(`<p class='col-sm-5'>${desc}</p>`);
+        _div.append(_p);
+        let _img = $("<img class='col-sm-3 img-responsive'>");
         _img.prop("src", foto);
-        _img.prop("height", "150");
-        _info.append(_img);
-        _p = $(`<p>${desc}</p>`);
-        _info.append(_p);
+        _img.css("max-height", "15em");
+        _img.css("max-width", "15em");
+        _div.append(_img);
+        _info.append(_div);
     });
 }
 
 function creaTabellaTeams(teams) {
-    let _table = $("<table>");
+    let _table = $("<table>").addClass("table");
     _table.append($("<tr><td>ID</td><td>Name</td><td>Country</td><td>Logo</td><td>First Driver</td><td>Second Driver</td><td>Car Photo</td></tr>"));
     for (let i = 0; i < teams.length; i++) {
         let row = $("<tr>");
@@ -108,7 +128,7 @@ function creaTabellaTeams(teams) {
                 row.append(_img);
             }
         }
-        let btnInfo = $(`<input type='button' onclick='visualizzaTeam(${teams[i]["id"]})' value='Info'>`);
+        let btnInfo = $(`<input type='button' onclick='visualizzaTeam(${teams[i]["id"]})' class='btn btn-danger' value='Info'>`);
         row.append(btnInfo);
         _table.append(row);
 
@@ -132,27 +152,26 @@ function visualizzaTeam(_teamId) {
         let technicalChief = data["technicalChief"];
         let secondoDriver = data["secondDriver"]["firstname"] + " " + data["secondDriver"]["lastname"];
 
-        _info.append($(`<h1>${nome}</h1>`));
+        let _div1 = $("<div class='row'></div>");
+        _div1.append($("<div class='col-sm-4'><div/>"));
         let _img = $("<img>");
         _img.prop("src", logo);
-        _img.prop("height", "150");
-        _info.append(_img);
-        let _p = $(`<p>Full team Name: ${nomeCompleto}</p>`);
-        _info.append(_p);
-        _p = $(`<p>Country: ${paese}</p>`);
-        _info.append(_p);
-        _p = $(`<p>Chassis: ${chassis}</p>`);
-        _info.append(_p);
-        _p = $(`<p>Power unit: ${powerUnit}</p>`);
-        _info.append(_p);
-        _p = $(`<p>TechnicalChief: ${technicalChief}</p>`);
-        _info.append(_p);
-        _p = $(`<p>Drivers: ${primoDriver}, ${secondoDriver}</p>`);
-        _info.append(_p);
+        _img.css("max-height", "10em");
+        _img.css("max-width", "10em");
+        _div1.append(_img);
+        _div1.append($("<div class='col-sm-4'><h1>" + nome + "</h1><div/>"));
+        _info.append(_div1);
+
+        let _div = $("<div class='row'></div>");
+        _div.append($("<div class='col-sm-3'><div/>"));
+        let _p = $(`<p>Full team Name: ${nomeCompleto} <br/> Country: ${paese} </br> Chassis: ${chassis} <br/> Power unit: ${powerUnit} <br/> TechnicalChief: ${technicalChief} <br/> Drivers: ${primoDriver}, ${secondoDriver} <br/> </p>`);
+        _div.append(_p);
+        _info.append(_div);
         _img = $("<img>");
         _img.prop("src", foto);
         _img.prop("height", "150");
-        _info.append(_img);
+        _div.append(_img);
+        _info.append(_div);
     });
 }
 
@@ -192,7 +211,7 @@ function richiesta(parameters,callbackFunction) {
         data: "",
         contentType: "application/x-www-form-urlencoded; charset=UTF-8",
         dataType: "json",
-        timeout: 5000,
+        timeout: 50000,
     });
 
     _richiesta.done(callbackFunction);
